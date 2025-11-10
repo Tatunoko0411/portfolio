@@ -1,0 +1,347 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #e7e8e3;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/*メニュー関連*/
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: none;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #00000000;
+}
+
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #455a4f;
+        position: absolute;
+    }
+
+        .menu-btn span:before {
+            bottom: 8px;
+        }
+
+        .menu-btn span:after {
+            top: 8px;
+        }
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0); /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        background-color: #e7e8e3;
+    }
+
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+        background-color: #e7e8e3;
+    }
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #455a4f;
+}
+
+    .menu-content ul {
+        padding: 70px 10px 0;
+    }
+
+        .menu-content ul li {
+            border-bottom: solid 1px #e7e8e3;
+            list-style: none;
+        }
+
+            .menu-content ul li a {
+                display: block;
+                width: 100%;
+                font-size: 15px;
+                box-sizing: border-box;
+                color: #e7e8e3;
+                text-decoration: none;
+                padding: 9px 15px 10px 0;
+                position: relative;
+            }
+
+                .menu-content ul li a::before {
+                    content: "";
+                    width: 7px;
+                    height: 7px;
+                    border-top: solid 2px #e7e8e3;
+                    border-right: solid 2px #e7e8e3;
+                    transform: rotate(45deg);
+                    position: absolute;
+                    right: 11px;
+                    top: 16px;
+                }
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 97%; /*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #455a4f;
+    transition: all 0.5s; /*アニメーション設定*/
+}
+.menu-content img{
+    width:2%;
+    height:2%;
+    margin-right:7px;
+}
+
+.menu-content:hover {
+    left: 85%; /*メニューを画面内へ*/
+}
+
+/**/
+@keyframes infinity-scroll-left {
+    from{
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-90%);
+    }
+}
+
+.scroll-infinity__wrap {
+    display: flex;
+    overflow: hidden;
+}
+
+.scroll-infinity__list {
+    display: flex;
+    list-style: none;
+    padding: 0
+}
+
+.scroll-infinity__list--left {
+    animation: infinity-scroll-left 30s infinite linear ;
+}
+
+.scroll-infinity__item {
+    width: calc(100vw /5);
+}
+
+    .scroll-infinity__item > img {
+        width: 100%;
+        height:100%;
+    }
+.works {
+    filter: brightness(0.5);
+}
+
+    .works:hover {
+        filter: brightness(1);
+    }
+.scroll-infinity {
+    width: 100%;
+    position: center;
+    position: relative;
+
+}
+
+    .scroll-infinity p {
+        font-family:fantasy;
+        position: absolute; /*重ねたい子要素にabsolute*/
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%,-50%); /*ベンダープレフィックス*/
+        -webkit-transform: translate(-50%,-50%); /*ベンダープレフィックス*/
+        transform: translate(-50%,-50%); /*センター寄せの修正*/
+        color: #e7e8e3;
+        font-size: 8em;
+    }
+/*トップ*/
+.top {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    flex-grow:1 2;
+    margin-bottom:40px;
+}
+
+.top p{
+    width:200px;
+}
+.icon{
+    width:200px;
+}
+
+h1{
+    font-size:4em;
+    color:#455a4f;
+    margin-bottom:30px;
+}
+h2{
+    font-size:24px;
+    font-weight:900;
+    color:#455a4f;
+}
+p{
+    color:#6e8682;
+}
+
+.hov-bright {
+    width:100%;
+    margin-bottom:30px;
+    transition: filter 0.1s ease;
+    filter: brightness(1.0); /* デフォルト値なのでこの一行は省略してもOK */
+}
+
+    .hov-bright:hover {
+        filter: brightness(1.50); /* 明るくする */
+    }
+
+.question {
+    text-decoration-line: none;
+    display: grid;
+    margin-top: 30px;
+    place-content: center;
+    place-items: center;
+}
+    .question p{
+        text-align:center;
+    }
+
+    .question img {
+        width: 200px;
+        position:center;
+    }
+
+.work-pic{
+    width:200px;
+}
+
+@media(max-width:1000px) {
+    .scroll-infinity p {
+        font-size: 5em;
+    }
+}
+
+@media(max-width:500px) {
+    .menu-content img {
+        width: 4%;
+        height: 4%;
+    }
+
+    .top h1 {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+    .top h2 {
+        font-size: 1em;
+    }
+    .menu-btn {
+        display: flex;
+    }
+
+    .menu-content {
+        left: 100%;
+    }
+
+    #menu-btn-check:checked ~ .menu-content {
+        left: 65%; /*メニューを画面内へ*/
+    }
+
+    .scroll-infinity p {
+        font-size:4em;
+    }
+
+    .question img {
+        width: 100px;
+
+    }
+
+    .icon{
+        width:100px;
+        height:100px;
+    }
+
+    .question p{
+        font-size:10px;
+    }
+}

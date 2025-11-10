@@ -1,0 +1,62 @@
+.profile-main{
+    display: flex;
+    padding-bottom:30px;
+}
+.profile-lung-block{
+    display:flex;
+    margin-bottom:10px;
+}
+
+i{
+font-size:8em;
+margin-right:20px;
+}
+
+.profile-head {
+    width: 100%;
+    margin-bottom: 30px;
+    filter: brightness(1.5); /* デフォルト値なのでこの一行は省略してもOK */
+}
+
+.profile-content{
+    place-items:center;
+}
+
+
+
+.profile-content p {
+    width: 260px;
+}
+
+.profile-main p {
+    line-height: 40px
+}
+
+.profile-main-column {
+    line-height: 20px;
+}
+h2{
+    margin-bottom:10px;
+}
+
+body{
+    place-content:center;
+}
+
+.profile-content-about p{
+    line-height: 40px;
+}
+
+@media(max-width:500px) {
+    .profile-content p {
+        width: 170px;
+    }
+
+    .profile-main-column {
+        line-height: 30px;
+    }
+
+    .profile-content-about p{
+        line-height: 90px;
+    }
+}
