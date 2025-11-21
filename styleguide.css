@@ -15,7 +15,7 @@
   --color-text-default-default: var(--color-primitives-gray-900);
   --color-background-brand-tertiary: var(--color-primitives-brand-100);
   /* Unified palette */
-  --color-primitives-white-1000: #f6f8f7; /* page background */
+  --color-primitives-white-1000: #adc7ba; /* page background */
   --color-primitives-gray-300: #d9d9d9; /* borders / subtle lines */
   --color-primitives-gray-900: #1e1e1e; /* primary text */
   --color-primitives-brand-900: #265c54; /* brand / accent (deep teal) */

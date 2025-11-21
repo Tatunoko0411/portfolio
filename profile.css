@@ -98,11 +98,11 @@ body {
   line-height: 1.2;
   font-style: normal;
   display: block;
-  padding: 10px ;
+  padding: 10px;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
-  color:  #265c54;
+  color: #265c54;
 }
 
 @media (max-width: 500px) {
