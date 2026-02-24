@@ -19,7 +19,7 @@
 .works-contents {
   display: grid;
   place-content: center;
-  width: 50%;
+  width: 70%;
   padding-bottom: 10px;
   background-color: #6e8682;
 }
@@ -186,4 +186,22 @@ body {
   width: 300px;
   height: 200px;
   object-fit: cover;
+}
+
+/* Work item media styles */
+.video-wrapper {
+  width: 100%;
+  max-width: 580px;
+}
+
+.work-pic {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+iframe.work-pic {
+  aspect-ratio: 16/9;
 }
